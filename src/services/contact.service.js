@@ -13,7 +13,7 @@ class ContactService {
         return (await this.api.delete("/")).data;
     }
     async get(id) {
-        eturn (await this.api.get(`/${id}`)).data;
+        return (await this.api.get(`/${id}`)).data;
     }
     async update(id, data) {
         return (await this.api.put(`/${id}`, data)).data;
