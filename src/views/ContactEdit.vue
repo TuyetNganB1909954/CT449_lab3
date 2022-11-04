@@ -33,12 +33,12 @@
                     console.log(error);
                     // Chuyển sang trang NotFound đồng thời giữ cho URL không đổi
                     this.$router.push({
-                        name: "notfound",
-                        params: {
-                            pathMatch: this.$route.path.split("/").slice(1)
-                        },
-                        query: this.$route.query,
-                        hash: this.$route.hash,
+                    name: "notfound",
+                    params: {
+                        pathMatch: this.$route.path.split("/").slice(1)
+                    },
+                    query: this.$route.query,
+                    hash: this.$route.hash,
                     });
                 }
             },
@@ -53,18 +53,17 @@
             async deleteContact() {
                 if (confirm("Bạn muốn xóa Liên hệ này?")) {
                     try {
-                        await ContactService.delete(this.contact._id);
-                        this.$router.push({ name: "contactbook" });
+                    await ContactService.delete(this.contact._id);
+                    this.$router.push({ name: "contactbook" });
                     } catch (error) {
-                        console.log(error);
+                    console.log(error);
                     }
                 }
             },
         },
         created() {
-            this.getContact(this.id);
-            this.message = "";
+        this.getContact(this.id);
+        this.message = "";
         },
     };
 </script>
-
